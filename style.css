@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 45px;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type=search] {
+  width:100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 0px 12px 5px;
+}
+
+.form{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.default {
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px; }
+
+.center {
+  margin: auto;
+  width: 50%;
+  text-align: center;    
+}
