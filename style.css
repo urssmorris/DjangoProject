@@ -1,35 +1,56 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://ssl.gstatic.com/docs/script/css/add-ons1.css');
 
 
 h1 {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 45px;
+  font-weight: 100%;
+  font-size: 70px;
   line-height: 1.15;
   letter-spacing: -.02em;
   color: rgba(0, 0, 0, 0.8);
   -webkit-font-smoothing: antialiased;
+  margin: 10px;
+  
 }
 
 input[type=search] {
-  width:100%;
+  width:60%;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 25px;
   font-size: 16px;
   background-color: white;
   padding: 12px 0px 12px 5px;
+  display:block;
+  margin: auto;
 }
 
-.form{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 12px 0;
-  box-sizing: border-box;
-  border-radius: 4px;
+.button {
+    width:120px;
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: auto;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+    margin: 5px;
 }
+
+.button:hover {
+    border: 1px #C6C6C6 solid;
+    box-shadow: 1px 1px 1px #EAEAEA;
+    color: #333333;
+    background: #F7F7F7;
+}
+
+.button:active {
+    box-shadow: inset 1px 1px 1px #DFDFDF;   
+}
+
+
 
 .default {
   font-family: sans-serif;
@@ -40,7 +61,12 @@ input[type=search] {
   margin: 20px; }
 
 .center {
-  margin: auto;
+  text-align: center;
   width: 50%;
-  text-align: center;    
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;  
 }
