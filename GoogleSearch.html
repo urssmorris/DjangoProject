@@ -7,15 +7,15 @@
     
     <body>
        <div class="top-right"> 
-           <button class="button">Image Search</button>
-           <button class="button">Advanced Search</button>
-       
+           <button onclick="document.location='GoogleImageSearch.html'" class="button">Image Search</button>
+           <button onclick="document.location='GoogleAdvanceSearch.html'" class="button">Advanced Search</button> 
        </div>
+       
        <div class="center">
-          <h1>Google Search</h1>
+          <h1 class="title">Google Search</h1>
            <form action="https://google.com/search">
             <input type="search" name="q" placeholder="Search...">
-            <input class="button" value="Google Search">
+            <input type="submit" value="Google Search">
         </form>
        </div>
         
