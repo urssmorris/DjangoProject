@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block body %}
+<div>
+	<h1>Entry Not Found</h1>
+	<p>Sorry, the entry you are looking for was not found</p>
+
+	<a href="{% url 'index' %}" style="text-decoration: none">
+		<button>
+			Go Back Home
+		</button>
+	</a>
+</div>
+{% endblock %}
+
+
