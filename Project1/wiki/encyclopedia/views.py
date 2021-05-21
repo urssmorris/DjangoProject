@@ -4,10 +4,6 @@ from markdown2 import Markdown
 
 markdowner = Markdown()
 
-class Search(forms.Form):
-    item = forms.CharField(widget=forms.TextInput(attrs={'class' : 'myfieldclass', 'placeholder': 'Search'}))
-
-
 from . import util
 
 
@@ -30,5 +26,5 @@ def entry(request, title):
         return render(request, "encyclopedia/entry.html", context)
 
     else:
-        return render(request, "encyclopedia/error.html", {"message": "The requested page was not found.", "form":Search()})
+        return render(request, "encyclopedia/error.html")
 
