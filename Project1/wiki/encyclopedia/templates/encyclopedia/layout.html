@@ -21,40 +21,31 @@
                         {{form.item}}
                     </form> -->
 
-                <button id="sidebar_btn" class="navbar-toggler" type="button" data-toggle="collapse"
+                <!-- <button id="sidebar_btn" class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#sidebar_nav_menu" aria-controls="sidebar_nav_menu" aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse pt-3 px-2" id="sidebar_nav_menu">
+				</button> -->
+
+				<!-- <div class="collapse navbar-collapse pt-3 px-2" id="sidebar_nav_menu">
 					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
+						<li class="nav-item"> -->
 							<form class="search-form" action="/" method="POST">
 								{% csrf_token %}
 								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<button id="wiki_search_btn" class="btn btn-secondary dropdown-toggle mobile-block"
-											type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-											<!-- Search dropdown links-->
-										<div id="search_dropdown" class="dropdown-menu bg-dark position-absolute">
-											{% for entry_item in entries_options  %}
-											<a class="dropdown-item bg-dark text-light" href="#">{{entry_item}}</a>
-											{% endfor %}
-										</div>
-									</div>
 									<!--Search bar-->
-									<input type="text" class="search form-control" list="wiki-list" placeholder="Search Encyclopedia"
+									<input type="text" class="search form-control"  placeholder="Search"
 										name="search" aria-label="entry search bar">
-									<datalist id="wiki-list">
+									<!-- <datalist id="wiki-list">
 										{% for entry in entries_options %}
 										<option value="{{entry|safe}}"></option>
 										{% endfor %}
-									</datalist>
+									</datalist> -->
 								</div>
 							</form>
-						</li>
+						<!-- </li>
 					</ul>
-			</nav>
+                </div> -->
 
 
 

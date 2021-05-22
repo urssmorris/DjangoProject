@@ -1,6 +1,8 @@
 python3 manage.py runserver
 python -m pip install markdown2  
 
+https://github.com/asifo1/cs50w/tree/master/wiki/encyclopedia
+
 
     Entry Page: Visiting /wiki/TITLE, where TITLE is the title of an encyclopedia entry, should render a page that displays the contents of that encyclopedia entry.
         The view should get the content of the encyclopedia entry by calling the appropriate util function.

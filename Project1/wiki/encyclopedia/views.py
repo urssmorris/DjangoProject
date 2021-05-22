@@ -20,8 +20,7 @@ def entry(request, title):
 
         context = {
             'page': page_converted,
-            'title': title,
-            'form': Search()
+            'title': title            
         }
         return render(request, "encyclopedia/entry.html", context)
 
