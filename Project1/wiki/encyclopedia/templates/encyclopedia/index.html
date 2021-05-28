@@ -9,7 +9,8 @@
 
     <ul>
         {% for entry in entries %}
-            <li>{{ entry }}</li>
+        <!-- Index Page Update -->
+        <a href="{% url 'entry' entry %}"><li>{{ entry }}</li></a>
         {% endfor %}
     </ul>
 
