@@ -38,8 +38,10 @@ def get_entry(title):
 
 def search(query):
     """
-    Returns a list of all names of encyclopedia entries containing the search query
+    Returns a list of all names of encyclopedia entries matching the search query
     """
     _, filenames = default_storage.listdir("entries")
     return list(sorted(re.sub(r"\.md$", "", filename)
                 for filename in filenames if filename.endswith(".md") and query in filename.lower()))
+    #"listdir" returns a tuple, the first entry of which is a list of directories, and the second of which is a list of files.
+    # "_"is being used as a throwaway variable
