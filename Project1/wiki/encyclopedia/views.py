@@ -18,7 +18,7 @@ def entry(request, title):
 
 #Search function
 def search(request):
-    q = request.GET.get('q').strip().lower()
+    q = request.GET.get('q').strip()
     if q in util.list_entries():
         return redirect("entry", title = q)
     return render(request, "encyclopedia/search.html", {"entries": util.search(q), "q":q})
