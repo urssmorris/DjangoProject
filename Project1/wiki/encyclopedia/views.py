@@ -27,7 +27,7 @@ def search(request):
 def create(request):
     if request.method == "POST":
         title = request.POST.get("title").strip()
-        content = request.POST.get("content").strip()
+        content = "#"+title +"\n"+ request.POST.get("content").strip()
         if title == "" or content == "":
             return render(request, "encyclopedia/create.html", {"message": "Can't save with empty field.", "title": title, "content": content})
         if title in util.list_entries():
