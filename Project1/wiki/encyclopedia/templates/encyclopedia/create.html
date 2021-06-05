@@ -20,7 +20,7 @@
         <div class="form">
           <div class="my-3">
             <label for="title">Title</label>
-            <input type="text" id="title" class="form-control" name="title" placeholder="Title of the page"
+            <input type="text" id="title" class="form-control" name="title" placeholder="Page Title"
               {%if title%}
                 value="{{title}}"
               {%endif%}
@@ -29,13 +29,13 @@
           
           <div>
             <label for="content">Content</label>
-            <textarea class="form-control" id="content" cols="300" name="content" rows="10" placeholder="Write page content in markdown"
+            <textarea class="form-control" id="content" name="content" rows="10" placeholder="Description"
             >{%if content%}
               {{content}}
             {%endif%}</textarea>
           </div>
 
-        <input type="submit" value="Save" class="btn btn-success my-3" />
+        <input type="submit" value="Save" class="btn btn-primary my-3" />
         </div>
     </form>
 </div>

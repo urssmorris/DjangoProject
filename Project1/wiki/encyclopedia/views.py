@@ -29,9 +29,9 @@ def create(request):
         title = request.POST.get("title").strip()
         content = "#"+title +"\n"+ request.POST.get("content").strip()
         if title == "" or content == "":
-            return render(request, "encyclopedia/create.html", {"message": "Can't save with empty field.", "title": title, "content": content})
+            return render(request, "encyclopedia/create.html", {"message": "Both fields must be filled", "title": title, "content": content})
         if title in util.list_entries():
-            return render(request, "encyclopedia/create.html", {"message": "Title already exist. Try another.", "title": title, "content": content})
+            return render(request, "encyclopedia/create.html", {"message": "Title already exist", "title": title, "content": content})
         util.save_entry(title, content)
         return redirect("entry", title=title)
     return render(request, "encyclopedia/create.html")
