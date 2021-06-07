@@ -10,5 +10,7 @@ urlpatterns = [
     #Search path
     path("search", views.search, name="search"),
     #Create path
-    path("create", views.create, name="create")
+    path("create", views.create, name="create"),
+    #Edit path
+    path("edit/<title>", views.edit, name="edit")
 ] 

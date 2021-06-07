@@ -3,7 +3,7 @@
 {% block title %} {{title}} {%endblock %} 
 
 {% block body %} 
-<a href="{% url 'entry' title %}" class="badge badge-primary">Edit This Page</a>
+<a href="{% url 'edit' title %}" class="badge badge-primary">Edit This Page</a>
 
 {{content | safe}} 
 

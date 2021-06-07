@@ -36,3 +36,17 @@ def create(request):
         util.save_entry(title, pretitle + content)
         return redirect("entry", title=title)
     return render(request, "encyclopedia/create.html")
+
+#Edit function
+def edit(request, title):
+    content = util.get_entry(title.strip())
+    if content == None:
+        return render(request, "encyclopedia/edit.html", {'error': "404 Not Found"})
+
+    if request.method == "POST":
+        content = request.POST.get("content").strip()
+        if content == "":
+            return render(request, "encyclopedia/edit.html", {"message": "Can't save with empty field.", "title": title, "content": content})
+        util.save_entry(title, content)
+        return redirect("entry", title=title)
+    return render(request, "encyclopedia/edit.html", {'content': content, 'title': title})
