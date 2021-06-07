@@ -27,11 +27,12 @@ def search(request):
 def create(request):
     if request.method == "POST":
         title = request.POST.get("title").strip()
-        content = "#"+title +"\n"+ request.POST.get("content").strip()
+        pretitle = "#"+title+"\n"
+        content = request.POST.get("content").strip()
         if title == "" or content == "":
             return render(request, "encyclopedia/create.html", {"message": "Both fields must be filled", "title": title, "content": content})
         if title in util.list_entries():
             return render(request, "encyclopedia/create.html", {"message": "Title already exist", "title": title, "content": content})
-        util.save_entry(title, content)
+        util.save_entry(title, pretitle + content)
         return redirect("entry", title=title)
     return render(request, "encyclopedia/create.html")

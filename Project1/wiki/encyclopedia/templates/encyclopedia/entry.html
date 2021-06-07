@@ -1,8 +1,6 @@
 {% extends "encyclopedia/layout.html" %} 
 
-{% block title %} 
-    {{title}}
-{%endblock %} 
+{% block title %} {{title}} {%endblock %} 
 
 {% block body %} 
 <a href="{% url 'entry' title %}" class="badge badge-primary">Edit This Page</a>
