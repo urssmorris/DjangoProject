@@ -5,7 +5,7 @@
 {% block body %} 
 <!-- Edit link -->
 <a href="{% url 'edit' title %}" class="badge badge-primary">Edit This Page</a>
-
+<!-- Safe filter -->
 {{content | safe}} 
 
 {% endblock %}
