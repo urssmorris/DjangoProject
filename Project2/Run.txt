@@ -1,0 +1,3 @@
+cp -rp /mnt/c/Users/Morris_Nbk/Documents/commerce ~/Project/Project2
+python3 manage.py makemigrations auctions
+python3 manage.py migrate
