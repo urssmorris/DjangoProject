@@ -12,5 +12,7 @@ urlpatterns = [
     #Create path
     path("create", views.create, name="create"),
     #Edit path
-    path("edit/<title>", views.edit, name="edit")
+    path("edit/<title>", views.edit, name="edit"),
+    #Random path
+    path("random", views.randomPage, name="random")
 ] 

@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from . import util
 from markdown2 import markdown
+from random import randint
 
 
 def index(request):
@@ -8,7 +9,7 @@ def index(request):
         "entries": util.list_entries()
     })
 
-#Entry function
+#Entry function (Markdown to HTML Conversion)
 def entry(request, title):
     content = util.get_entry(title.strip())
     if content == None:
@@ -50,3 +51,9 @@ def edit(request, title):
         util.save_entry(title, content)
         return redirect("entry", title=title)
     return render(request, "encyclopedia/edit.html", {'content': content, 'title': title})
+
+# Random page function
+def randomPage(request):
+    entries = util.list_entries()
+    randomTitle = entries[randint(0, len(entries)-1)]
+    return redirect("entry", title=randomTitle)
