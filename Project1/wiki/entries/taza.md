@@ -1,3 +1,5 @@
-#taza
 #Taza
-#buena
+Se puede tomar de ella.
+
+#Posataza
+Se puede apollar la taza
