@@ -121,9 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/images/'
+#MEDIA_URL = '/images/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'auctions/static/auctions/images')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'auctions/static/auctions/images')
 
 #django 3.2: primary keys defined to be created automatically.
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
