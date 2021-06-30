@@ -1,11 +1,11 @@
 body {
     padding: 10px;
-    background-color: rgb(48, 35, 228);
     max-width: 30%;
     margin: auto;
     text-align: center;
 }
 
+/* Background style */
 .bg-dark {
     width: 100%;
     position: fixed;
@@ -14,13 +14,11 @@ body {
     width: 100%;                         
 }
 
+/* Footer style */
 .bg-img {
-    /* Center and scale the image nicely */
     background-position: top;
     background-size: cover;
     background-attachment: fixed ;
-    
-  
 }
   
 h1, h2 {
