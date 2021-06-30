@@ -3,10 +3,13 @@
 {% block body %}
   <h1>Create a New Listing</h1>
   
+  <div class="create_listing">
   <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {% comment %} Render Django Forms as paragraph {% endcomment %}
     {{ form.as_p }}
     <input type="submit" value="Create Listing" class="btn btn-primary">
   </form>
+  </div>
+  
 {% endblock %}

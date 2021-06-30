@@ -29,11 +29,30 @@ body {
     color: aliceblue;
 }
 
-#id_description {
-    width: 200px;
-    height: 100px;
+
+/* Create Listing page style */
+.create_listing {
+    text-align: left;    
 }
 
-p {
-    text-align: justify;
+.create_listing input[type="submit"] {
+    width: 100%;  
 }
+
+/* Create Listing Text fields style */
+.create_listing input[type="text"] {
+    width: 100%;
+    text-align: left;
+}
+
+/* Create Listing number fields style */
+.create_listing input[type="number"]  {
+    width: 100%;
+    text-align: right;
+}
+
+/* Create Listing description field style */
+#id_description {
+    height: auto;  
+}
+
