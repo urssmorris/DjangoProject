@@ -28,3 +28,8 @@ h1, h2 {
 body {
     color: aliceblue;
 }
+
+#id_description {
+    width: 200px;
+    height: 100px;
+}
