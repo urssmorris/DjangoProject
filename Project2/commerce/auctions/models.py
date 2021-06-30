@@ -37,7 +37,7 @@ class Comment(models.Model):
 class Listing(models.Model):
     item = models.CharField(max_length=64)
     description = models.CharField(max_length=256, blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default= "000")
     category = models.CharField(max_length=1, choices=CATEGORIES, default=CATEGORIES[5][1])
     time = models.DateTimeField(auto_now_add=True, blank=True)
     closed = models.BooleanField(default=False)
