@@ -3,6 +3,7 @@ body {
     max-width: 30%;
     margin: auto;
     text-align: center;
+    color: aliceblue;
 }
 
 /* Background style */
@@ -24,11 +25,6 @@ body {
 h1, h2 {
     color: aliceblue;
 }
-
-body {
-    color: aliceblue;
-}
-
 
 /* Create Listing page style */
 .create_listing {

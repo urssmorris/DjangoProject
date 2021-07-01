@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
+#Listing categories
 CATEGORIES = (
     ('a', 'Microprocessors'),
     ('b', 'Motherboards'),
@@ -17,7 +17,7 @@ class User(AbstractUser):
     pass
     #customer_id = models.CharField(max_length=100, blank=True, null=True)
 
-#Bids
+#Bid model
 class Bid(models.Model):
     time = models.DateTimeField(auto_now_add=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_bids")
@@ -26,7 +26,7 @@ class Bid(models.Model):
     def __str__(self):
         return f"{self.user} put a bid in for {self.price}"
 
-#Comment
+#Comment model
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_coms")
     title = models.CharField(max_length=25, default="")
