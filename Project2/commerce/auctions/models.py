@@ -21,10 +21,10 @@ class User(AbstractUser):
 class Bid(models.Model):
     time = models.DateTimeField(auto_now_add=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_bids")
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField('Bid', max_digits=10, decimal_places=2)
 
-    def __str__(self):
-        return f"{self.user} put a bid in for {self.price}"
+    # def __str__(self):
+    #     return f"{self.user} put a bid in for {self.price}"
 
 #Comment model
 class Comment(models.Model):
@@ -33,11 +33,11 @@ class Comment(models.Model):
     comment = models.CharField(max_length=255)
     time = models.DateTimeField(auto_now_add=True, blank=True)
 
-#Create listing model
+#Create auction listing model
 class Listing(models.Model):
-    item = models.CharField(max_length=64)
-    description = models.CharField(max_length=256, blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2, default= "0.00")
+    item = models.CharField('Title', max_length=64)
+    price = models.DecimalField('Starting Bid', max_digits=10, decimal_places=2, default= "0.00")
+    description = models.TextField(max_length=300, blank=True)
     category = models.CharField(max_length=1, choices=CATEGORIES, default=CATEGORIES[5][1])
     time = models.DateTimeField(auto_now_add=True, blank=True)
     closed = models.BooleanField(default=False)
@@ -46,6 +46,13 @@ class Listing(models.Model):
     comments = models.ManyToManyField(Comment, blank=True, related_name="comments")
     image = models.ImageField(null=True, blank=True)
 
-    def __str__(self):
-        return f"{self.item}: is {self.price} and is being sold by {self.owner}"
+    # def __str__(self):
+    #     return f"{self.item}: is {self.price} and is being sold by {self.owner}"
 
+#Wacthlist model
+class Watchlist(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="watchlist")
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="listings")
+
+    # def __str__(self):
+    #     return f"{self.user.username} listed {self.listing.id}"

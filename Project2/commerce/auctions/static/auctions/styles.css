@@ -4,9 +4,10 @@ body {
     margin: auto;
     text-align: center;
     color: aliceblue;
+    margin-bottom: 50px;
 }
 
-/* Background style */
+/* Footer style */
 .bg-dark {
     width: 100%;
     position: fixed;
@@ -15,7 +16,7 @@ body {
     width: 100%;                         
 }
 
-/* Footer style */
+/* Background style */
 .bg-img {
     background-position: top;
     background-size: cover;
@@ -28,12 +29,8 @@ h1, h2 {
 
 /* Create Listing page style */
 .create_listing {
-    text-align: left;    
-}
-
-.create_listing input[type="submit"] {
-    width: 100%;  
-}
+    text-align: left;  
+}  
 
 /* Create Listing Text fields style */
 .create_listing input[type="text"] {
@@ -49,6 +46,11 @@ h1, h2 {
 
 /* Create Listing description field style */
 #id_description {
-    height: auto;  
+    height: 100px;
+    width: 100%; 
 }
 
+/* Create Listing button */
+.create_listing input[type="submit"] {
+    width: 100%;
+}   
