@@ -21,5 +21,4 @@ urlpatterns = [
     path("categories", views.categories, name="categories"),
     path("categories/<str:category>", views.show_category_listings, name="show"),
     path("comment/<int:listing_id>", views.comment, name="comment"),
-    path("listing/<int:listing_id>", views.show_listing, name="listing"),
 ]

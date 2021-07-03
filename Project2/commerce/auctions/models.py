@@ -23,8 +23,8 @@ class Bid(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_bids")
     price = models.DecimalField('Bid', max_digits=10, decimal_places=2)
 
-    # def __str__(self):
-    #     return f"{self.user} put a bid in for {self.price}"
+    def __str__(self):
+        return f"{self.user} put a bid in for {self.price}"
 
 #Comment model
 class Comment(models.Model):
@@ -46,13 +46,13 @@ class Listing(models.Model):
     comments = models.ManyToManyField(Comment, blank=True, related_name="comments")
     image = models.ImageField(null=True, blank=True)
 
-    # def __str__(self):
-    #     return f"{self.item}: is {self.price} and is being sold by {self.owner}"
+    def __str__(self):
+        return f"{self.item}: is {self.price} and is being sold by {self.owner}"
 
 #Wacthlist model
 class Watchlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="watchlist")
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="listings")
 
-    # def __str__(self):
-    #     return f"{self.user.username} listed {self.listing.id}"
+    def __str__(self):
+        return f"{self.user.username} listed {self.listing.id}"
