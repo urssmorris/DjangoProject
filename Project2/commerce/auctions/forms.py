@@ -8,7 +8,7 @@ class ListingForm(ModelForm):
     model = Listing
     fields = ['item', 'price', 'description', 'category', 'image']
 
-#Bud form
+#Bid form
 class BidForm(ModelForm):
   class Meta:
     model = Bid
