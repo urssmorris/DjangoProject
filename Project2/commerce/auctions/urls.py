@@ -21,4 +21,4 @@ urlpatterns = [
     path("categories", views.categories, name="categories"),
     path("categories/<str:category>", views.show_category_listings, name="show"),
     path("comment/<int:listing_id>", views.comment, name="comment"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

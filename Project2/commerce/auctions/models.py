@@ -44,7 +44,7 @@ class Listing(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owners")
     bids = models.ManyToManyField(Bid, blank=True, related_name="bids")
     comments = models.ManyToManyField(Comment, blank=True, related_name="comments")
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='auction/images/')
 
     def __str__(self):
         return f"{self.item}: is {self.price} and is being sold by {self.owner}"
