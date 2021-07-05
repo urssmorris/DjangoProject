@@ -8,7 +8,7 @@
         <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
     </head>
     <body class="bg-img" style="background-image: url('{% static "auctions/images/top_background.jpg"%}');">
-        <h1>Auctions</h1>
+        <h1>Online Computer Auctions</h1>
         <div>
             {% if user.is_authenticated %}
                 Signed in as <strong>{{ user.username }}</strong>.
@@ -56,7 +56,7 @@
         {% endblock %}
         <!-- Footer-->
         <footer class="py-3 bg-dark" >
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Online Computer Auctions 2021</p></div>
         </footer>
     </body>
 </html>
