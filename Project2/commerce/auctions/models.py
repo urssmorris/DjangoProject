@@ -38,7 +38,7 @@ class Listing(models.Model):
     item = models.CharField('Title', max_length=64)
     price = models.DecimalField('Starting Bid', max_digits=10, decimal_places=2, default= "0.00")
     description = models.TextField(max_length=300, blank=True)
-    category = models.CharField(max_length=1, choices=CATEGORIES, default=CATEGORIES[5][1])
+    category = models.CharField(max_length=1, choices=CATEGORIES, default=CATEGORIES[0][0])
     time = models.DateTimeField(auto_now_add=True, blank=True)
     closed = models.BooleanField(default=False)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owners")

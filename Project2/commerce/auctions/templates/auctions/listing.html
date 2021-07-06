@@ -38,7 +38,7 @@
     <h4>Details</h4>
     <ul>
       <li>Listed by: {{ listing.owner }}</li>
-      <li>Category: {{ listing.category }}</li>
+      <li>Category: {{ category }}</li>
       {% if listing.closed %}
         <li><strong>Winner: </strong>{{ listing.bids.last.user.username }}</li>
       {% endif %}

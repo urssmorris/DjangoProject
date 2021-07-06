@@ -121,7 +121,8 @@ def show_listing(request, listing_id):
             else:
                 price = float(request.POST["price"])
                 bids = listing.bids.all()
-                if user.username != listing.owner.username: # only let those who dont own the listing be able to bid
+                # only let those who dont own the listing be able to bid
+                if user.username != listing.owner.username: 
                     if price <= listing.price:
                         return render(request, "auctions/listing.html", {
                             "listing": listing,
@@ -130,7 +131,6 @@ def show_listing(request, listing_id):
                         })
                     form = BidForm(request.POST)
                     if form.is_valid():
-                        # clean up this
                         bid = form.save(commit=False)
                         bid.user = user
                         bid.save()
@@ -143,10 +143,13 @@ def show_listing(request, listing_id):
                         })
         return HttpResponseRedirect(reverse('listing', args=(listing.id,)))
     else:
+        # Category name from index
+        category = listing.category
+        cat = dict(CATEGORIES)
         return render(request, "auctions/listing.html", {
             "listing": listing,
             "form": BidForm(),
-            "message": ""
+            "category": cat[category]
         })
 
 
