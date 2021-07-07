@@ -23,6 +23,7 @@ body {
     background-attachment: fixed ;
 }
   
+/* Headers style */
 h1, h2 {
     color: aliceblue;
 }
@@ -54,3 +55,9 @@ h1, h2 {
 .create_listing input[type="submit"] {
     width: 100%;
 }   
+
+#categories {
+    position: fixed;
+    align-items: left;
+    justify-content: left;
+}

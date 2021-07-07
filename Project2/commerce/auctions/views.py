@@ -187,7 +187,7 @@ def categories(request):
 def show_category_listings(request, category):
     listings = Listing.objects.filter(category__in = category[0])
     cat = dict(CATEGORIES)
-    return render(request, 'auctions/specific.html', {
+    return render(request, 'auctions/category.html', {
         "listings": listings,
         "category": cat[category]
     })
