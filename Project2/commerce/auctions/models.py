@@ -21,7 +21,7 @@ class User(AbstractUser):
 class Bid(models.Model):
     time = models.DateTimeField(auto_now_add=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_bids")
-    price = models.DecimalField('Bid', max_digits=10, decimal_places=2)
+    price = models.DecimalField('Bid', max_digits=10, decimal_places=2, default= "0.00")
 
     def __str__(self):
         return f"{self.user} put a bid in for {self.price}"
@@ -30,7 +30,7 @@ class Bid(models.Model):
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_coms")
     title = models.CharField(max_length=25, default="")
-    comment = models.CharField(max_length=255)
+    comment = models.TextField(max_length=300)
     time = models.DateTimeField(auto_now_add=True, blank=True)
 
 #Create auction listing model

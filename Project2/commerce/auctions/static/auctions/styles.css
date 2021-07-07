@@ -1,3 +1,4 @@
+/* Body style */
 body {
     padding: 10px;
     max-width: 30%;
@@ -45,20 +46,32 @@ h1, h2 {
     text-align: right;
 }
 
-/* Create Listing description field style */
-#id_description {
-    height: 100px;
-    width: 100%; 
+/* Create Listing description/comment field style */
+#id_description, #id_comment {
+    height: 150px;
+    width: 100%;
 }
 
 /* Create Listing button */
 .create_listing input[type="submit"] {
+    text-align: center;
     width: 100%;
 }   
 
+/* Categories list style */
 .categories {
     display: block;
     text-align: left;
-    
-    
+}
+
+/* Comment input text style */
+#comment input[type="text"] {
+    width: 100%;
+}
+
+/* Listing bid input style */
+.form-group input[type="number"] {
+    margin-left: 10px;
+    width: 50%;
+    text-align: right;
 }

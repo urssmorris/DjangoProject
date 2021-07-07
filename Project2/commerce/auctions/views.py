@@ -120,7 +120,7 @@ def show_listing(request, listing_id):
                 listing.save()
             else:
                 price = float(request.POST["price"])
-                bids = listing.bids.all()
+                # bids = listing.bids.all()
                 # only let those who dont own the listing be able to bid
                 if user.username != listing.owner.username: 
                     if price <= listing.price:
