@@ -7,13 +7,21 @@
     </div>
   {% endif %}
   <h1>Listing: {{ listing.item }}</h1>
+
+  {% comment %} Add to Watchlist {% endcomment %}
   <div class="m-2">
     <form action="{% url 'listing' listing.id %}" method="POST">
       {% csrf_token %}
-      <button type="submit" name="button" value="Watchlist" class="btn btn-secondary btn-sm">Watchlist</button>
+      
+      {% if watched %}
+      <button type="submit" name="button" value="Watchlist" class="btn btn-danger btn-sm">Watchlist</button>
+      {% else %}
+      <button type="submit" name="button" value="Watchlist" class="btn btn-primary btn-sm">Watchlist</button>
+      {% endif %}
     </form>
   </div>
 
+  {% comment %} Listing {% endcomment %}
   <div>
     <img src="{{ listing.image.url }}" alt="image" style="width: 300px; height: auto">
   </div>
@@ -50,7 +58,7 @@
     </form>
     {% endif %}
   </div>
-
+  {% comment %} Comments {% endcomment %}
   <div>
     <h4>Comments</h4>
     <a href="{% url 'comment' listing.id %}"><span class="badge badge-primary">Add a Comment!</span></a>
