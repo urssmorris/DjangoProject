@@ -121,15 +121,18 @@ def show_listing(request, listing_id):
                 watchlist.listing = listing
                 watchlist.save()
                 
+                ####
                 listing.watched.add(request.user)
                 watched = False
+                ###
             else:
                 user.watchlist.filter(listing=listing).delete()
                 
+                ###
                 listing.watched.remove(request.user)
                 watched = True
-                
-            return HttpResponseRedirect(reverse('listing', args=(listing.id, watched)))
+                ###
+            return HttpResponseRedirect(reverse('listing', args=(listing.id,)))
 
             
         if not listing.closed:
