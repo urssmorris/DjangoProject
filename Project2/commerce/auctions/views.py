@@ -106,14 +106,15 @@ def show_listing(request, listing_id):
     if request.method == "POST":
         user = User.objects.get(username=request.user)
         
-        watched = False
+        
         # if Watchlist.watched.filter(id=request.user.id).exists():
         #     Watchlist.watched.remove(request.user)
         #     watched = False
         # else:
         #     Watchlist.watched.add(request.user)
         #     watched = True
-
+        
+        
         if request.POST.get("button") == "Watchlist": 
             if not user.watchlist.filter(listing = listing):
                 watchlist = Watchlist()
@@ -121,17 +122,11 @@ def show_listing(request, listing_id):
                 watchlist.listing = listing
                 watchlist.save()
                 
-                ####
-                listing.watched.add(request.user)
-                watched = False
-                ###
+                
             else:
                 user.watchlist.filter(listing=listing).delete()
                 
-                ###
-                listing.watched.remove(request.user)
-                watched = True
-                ###
+               
             return HttpResponseRedirect(reverse('listing', args=(listing.id,)))
 
             

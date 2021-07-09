@@ -45,7 +45,7 @@ class Listing(models.Model):
     bids = models.ManyToManyField(Bid, blank=True, related_name="bids")
     comments = models.ManyToManyField(Comment, blank=True, related_name="comments")
     image = models.ImageField(upload_to='auction/images/')
-    watched = models.ManyToManyField(User, related_name="watchlist_btn")
+    
 
     def __str__(self):
         return f"{self.item}: is {self.price} and is being sold by {self.owner}"
@@ -54,6 +54,7 @@ class Listing(models.Model):
 class Watchlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="watchlist")
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="listings")
+    watched = models.ManyToManyField(User, related_name="watchlist_btn")
     
     def __str__(self):
         return f"{self.user.username} listed {self.listing.id}"
