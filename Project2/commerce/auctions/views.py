@@ -112,22 +112,25 @@ def show_listing(request, listing_id):
         #     watched = False
         # else:
         #     Watchlist.watched.add(request.user)
-        #     watched = True
+        #     watched = False
         
-        
+        watched = False
         if request.POST.get("button") == "Watchlist": 
             if not user.watchlist.filter(listing = listing):
                 watchlist = Watchlist()
                 watchlist.user = user
                 watchlist.listing = listing
                 watchlist.save()
-                
+                watched = True
                 
             else:
                 user.watchlist.filter(listing=listing).delete()
-                
+                watched = False
                
-            return HttpResponseRedirect(reverse('listing', args=(listing.id,)))
+            #return HttpResponseRedirect(reverse('listing', args=(listing.id,)))
+            return render(request, 'auctions/listing.html', {
+                "listing": listing,
+                "watched": watched})
 
             
         if not listing.closed:

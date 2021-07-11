@@ -14,9 +14,9 @@
       {% csrf_token %}
       
       {% if watched %}
-      <button type="submit" name="button" value="Watchlist" class="btn btn-danger btn-sm">Watchlist</button>
+      <button type="submit" name="button" value="Watchlist" class="btn btn-danger btn-sm">Remove From Watchlist</button>
       {% else %}
-      <button type="submit" name="button" value="Watchlist" class="btn btn-primary btn-sm">Watchlist</button>
+      <button type="submit" name="button" value="Watchlist" class="btn btn-primary btn-sm">Add To Watchlist</button>
       {% endif %}
     </form>
   </div>
