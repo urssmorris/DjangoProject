@@ -103,34 +103,28 @@ def watchlist(request):
 @login_required
 def show_listing(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
+    user = User.objects.get(username=request.user)
     if request.method == "POST":
-        user = User.objects.get(username=request.user)
+        #user = User.objects.get(username=request.user)       
         
-        
-        # if Watchlist.watched.filter(id=request.user.id).exists():
-        #     Watchlist.watched.remove(request.user)
-        #     watched = False
-        # else:
-        #     Watchlist.watched.add(request.user)
-        #     watched = False
-        
-        watched = False
-        if request.POST.get("button") == "Watchlist": 
+
+        # Watchlist 
+        if request.POST.get("button") == "Watchlist":
+            watched = False
             if not user.watchlist.filter(listing = listing):
                 watchlist = Watchlist()
                 watchlist.user = user
                 watchlist.listing = listing
                 watchlist.save()
-                watched = True
-                
+                watched = True  
             else:
                 user.watchlist.filter(listing=listing).delete()
                 watched = False
-               
-            #return HttpResponseRedirect(reverse('listing', args=(listing.id,)))
             return render(request, 'auctions/listing.html', {
                 "listing": listing,
-                "watched": watched})
+                "watched": watched,
+                "form": BidForm()
+                })
 
             
         if not listing.closed:
@@ -146,7 +140,7 @@ def show_listing(request, listing_id):
                         return render(request, "auctions/listing.html", {
                             "listing": listing,
                             "form": BidForm(),
-                            "message": "Error! Invalid bid amount!"
+                            "message": "Invalid Bid Amount!"
                         })
                     form = BidForm(request.POST)
                     if form.is_valid():
@@ -165,10 +159,14 @@ def show_listing(request, listing_id):
         # Category name from index
         category = listing.category
         cat = dict(CATEGORIES)
+        watched = False
+        if user.watchlist.filter(listing=listing):
+            watched = True
         return render(request, "auctions/listing.html", {
             "listing": listing,
             "form": BidForm(),
-            "category": cat[category]
+            "category": cat[category],
+            "watched": watched
         })
 
 
@@ -193,7 +191,7 @@ def comment(request, listing_id):
     else:
         return render(request, "auctions/comment.html", {
             "form": CommentForm(),
-            "listing_id": listing.id
+            "listing_id": listing.id            
         })
 
 @login_required
