@@ -118,14 +118,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATIC_URL = '/auction/static/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-#MEDIA_URL = '/auction/images/'
+#MEDIA_URL = '//images/'
 
-MEDIA_URL = '/commerce/auctions/static/auctions/images/'
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 #django 3.2: primary keys defined to be created automatically.
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

@@ -44,7 +44,7 @@ class Listing(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owners")
     bids = models.ManyToManyField(Bid, blank=True, related_name="bids")
     comments = models.ManyToManyField(Comment, blank=True, related_name="comments")
-    image = models.ImageField(upload_to='auction/images/', default='auctions/images/default.jpg')
+    image = models.ImageField(upload_to='images', default='images/default.jpg')
     
 
     def __str__(self):
