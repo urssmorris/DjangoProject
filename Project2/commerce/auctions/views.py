@@ -105,10 +105,8 @@ def show_listing(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
     user = User.objects.get(username=request.user)
     if request.method == "POST":
-        #user = User.objects.get(username=request.user)       
-        
 
-        # Watchlist 
+        # Add/Remove from Watchlist 
         if request.POST.get("button") == "Watchlist":
             watched = False
             if not user.watchlist.filter(listing = listing):
