@@ -2,12 +2,10 @@
 body {
     padding: 10px;
     max-width: 50%;
-    height: 100vh;
     margin: auto;
     text-align: center;
     color: aliceblue;
     margin-bottom: 50px;
-    overflow-x: hidden;
 }
 
 /* Footer style */
@@ -15,10 +13,7 @@ body {
     width: 100%;
     position: fixed;
     left: 0;
-    bottom: 0;
-    height: 50px;
-    display: inline-block;
-    vertical-align: top;                         
+    bottom: 0;                     
 }
 
 /* Background style */
