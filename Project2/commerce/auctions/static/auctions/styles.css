@@ -5,7 +5,8 @@ body {
     margin: auto;
     text-align: center;
     color: aliceblue;
-    
+    margin-bottom: 50px;
+    overflow-x: hidden;
 }
 
 /* Footer style */
