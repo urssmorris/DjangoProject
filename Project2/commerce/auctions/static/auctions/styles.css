@@ -17,6 +17,7 @@ body {
     left: 0;
     bottom: 0;
     height: 50px;
+    display: inline-block;
     vertical-align: top;                         
 }
 
