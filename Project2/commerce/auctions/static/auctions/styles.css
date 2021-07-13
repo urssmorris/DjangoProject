@@ -1,24 +1,14 @@
 /* Body style */
 body {
-    padding: 0px;
-    height: 100%;
-    width: 50%;
-    margin: 0px;
-    text-align: center;
-    color: aliceblue;
-    
-    overflow-x: hidden;
-}
-
-/* body {
     padding: 10px;
     max-width: 50%;
+    height: 100%;
     margin: auto;
     text-align: center;
     color: aliceblue;
     margin-bottom: 50px;
     overflow-x: hidden;
-} */
+}
 
 /* Footer style */
 .bg-dark {
