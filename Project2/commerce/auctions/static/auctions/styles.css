@@ -1,5 +1,15 @@
 /* Body style */
 body {
+    padding: 0px;
+    max-width: 50%;
+    margin: 0px;
+    text-align: center;
+    color: aliceblue;
+    
+    overflow-x: hidden;
+}
+
+/* body {
     padding: 10px;
     max-width: 50%;
     margin: auto;
@@ -7,7 +17,7 @@ body {
     color: aliceblue;
     margin-bottom: 50px;
     overflow-x: hidden;
-}
+} */
 
 /* Footer style */
 .bg-dark {
